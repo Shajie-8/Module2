@@ -35,4 +35,12 @@ class Square {
         }
         this.side = side;
     }
+    // Method to calculate area
+    // UNDERSTAND: Returns area of square = side * side
+    // DECISION: No input parameters needed (side already stored in object state)
+    // Result is always non-negative
+    double calculateArea() {
+        return side * side;
+    }
+
 }

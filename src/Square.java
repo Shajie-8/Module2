@@ -22,11 +22,17 @@ class Square {
         return side;
     }
 
-
-
-
+    // Setter for side with validation
+    // UNDERSTAND: Allows modification of side with input validation (positive numbers only)
+    // DECISION: Used early return pattern for invalid input (instead of throwing exception)
+    // because this is designed for beginner learning control flow
     void setSide(double side){
-
-        return;
+        if (side <= 0) {
+            // TRACE: Validation error occurs when side <= 0
+            IO.println("Error: Side must be positive.");
+            IO.println("Side remains: " + this.side);
+            return; // UNDERSTAND: Early returns prevents invalid assignment
+        }
+        this.side = side;
     }
 }

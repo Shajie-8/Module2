@@ -42,5 +42,10 @@ class Square {
     double calculateArea() {
         return side * side;
     }
-
+    // Method to calculate perimeter
+    // UNDERSTAND: Returns perimeter of square = 4 * side
+    // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
+    double calculatePerimeter() {
+        return 4 * side;
+    }
 }

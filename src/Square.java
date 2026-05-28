@@ -15,6 +15,13 @@ class Square {
         setSide(side); // Using setter for validation
     }
 
+    // Getter for side
+    // UNDERSTAND: Provides controlled access to private field
+    // DECISION: No validation needed in getter (only returning value, not modifying)
+    double getSide() {
+        return side;
+    }
+
 
 
 

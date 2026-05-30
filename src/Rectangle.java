@@ -21,4 +21,19 @@ class Rectangle {
     double getLength(){
         return length;
     }
+
+    // UNDERSTAND: Allows modification of width with input validation (positive numbers only)
+    // DECISION: Used early return pattern for invalid input (instead of throwing exception)
+    // because this is designed for beginners learning control flow
+    void setWidth(double width) {
+        if (width <= 0) {
+            // TRACE: Validation error occurs when width <=0
+            IO.println("Error: Width mut be positive.");
+            IO.println("Width remeains: " + this.length);
+            return;
+        }
+        this.length = length;
+    }
+
+
 }

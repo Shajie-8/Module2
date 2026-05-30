@@ -6,4 +6,19 @@ class Rectangle {
     private double length;
     private double width;
 
+    // UNDERSTAND: Called when a new Rectangle object is created - initializes object state
+    // DECISION: Delegates to setter for validation (reuses existing validation logic)
+    Rectangle(double width, double length) {
+        setWidth(width);
+        setLength(length);
+    }
+    // UNDERSTAND: Provides controlled read access to private field
+    // DECISION: No validation needed in getter (only returning value, not modifying)
+    double getWidth() {
+        return width;
+    }
+
+    double getLength(){
+        return length;
+    }
 }

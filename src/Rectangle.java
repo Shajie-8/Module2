@@ -43,6 +43,15 @@ class Rectangle {
             return;
         }
         this.length = length;
+    }
 
+    double calculateArea() {
+        return width * length;
+    }
 
+    // UNDERSTAND: Returns perimeter of rectangle = 2 * (width + length)
+    // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
+    double calculatePerimeter() {
+        return 2 * (width + length);
+    }
 }

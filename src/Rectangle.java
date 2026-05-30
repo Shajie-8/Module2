@@ -28,12 +28,21 @@ class Rectangle {
     void setWidth(double width) {
         if (width <= 0) {
             // TRACE: Validation error occurs when width <=0
-            IO.println("Error: Width mut be positive.");
-            IO.println("Width remeains: " + this.length);
+            IO.println("Error: Width must be positive.");
+            IO.println("Width remains: " + this.width);
+            return;
+        }
+        this.width = width;
+    }
+
+    void setLength(double length) {
+        if (length <= 0) {
+            // TRACE: Validation error occurs when width <=0
+            IO.println("Error: Length must be positive.");
+            IO.println("Length remains: " + this.length);
             return;
         }
         this.length = length;
-    }
 
 
 }

@@ -5,4 +5,20 @@ class Ellipse {
     private double semiMajorAxis;
     private double semiMinorAxis;
 
+   // UNDERSTAND: Called when a new Ellipse object is created
+   // DECISION: Delegates to setters foe validation
+    Ellipse(double semiMajorAxis, double semiMinorAxis) {
+        setSemiMajorAxis(semiMajorAxis);
+        setSemiMinorAxis(semiMinorAxis);
+    }
+
+    // UNDERSTAND: Provides controlled read access to private fields
+    // DECISIONS: No validation needed in getter
+    double getSemiMajorAxis() {
+        return semiMajorAxis;
+    }
+    double getSemiMinorAxis() {
+        return semiMinorAxis;
+    }
+
 }

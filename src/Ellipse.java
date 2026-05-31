@@ -39,4 +39,11 @@ class Ellipse {
         }
         this.semiMinorAxis = semiMinorAxis;
     }
+
+    // UNDERSTAND: Returns area of ellipse
+    //: Uses Math.PI for precision instead of hardcoding 3.14
+    double calculateArea() {
+        return Math.PI * semiMajorAxis * semiMinorAxis;
+    }
+
 }

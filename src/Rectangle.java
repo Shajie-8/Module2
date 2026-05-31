@@ -1,16 +1,16 @@
-// UNDERSTAND: Models a geometric rectangle with length, width, area, perimeter, and ASCII display
+// UNDERSTAND: Models a geometric rectangle with height, width, area, perimeter, and ASCII display
 // AI-CHECK: Verified class design follow standard JavaBeans patterns (getters/setters)
 class Rectangle {
     // UNDERSTAND: Private access restricts direct modification from outside the class
-    // DECISION: length and width stored as double to support fraction
-    private double length;
+    // DECISION: height and width stored as double to support fraction
+    private double height;
     private double width;
 
     // UNDERSTAND: Called when a new Rectangle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
-    Rectangle(double width, double length) {
+    Rectangle(double width, double height) {
         setWidth(width);
-        setLength(length);
+        setheight(height);
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)
@@ -18,8 +18,8 @@ class Rectangle {
         return width;
     }
 
-    double getLength(){
-        return length;
+    double getheight(){
+        return height;
     }
 
     // UNDERSTAND: Allows modification of width with input validation (positive numbers only)
@@ -35,23 +35,23 @@ class Rectangle {
         this.width = width;
     }
 
-    void setLength(double length) {
-        if (length <= 0) {
+    void setheight(double height) {
+        if (height <= 0) {
             // TRACE: Validation error occurs when width <=0
-            IO.println("Error: Length must be positive.");
-            IO.println("Length remains: " + this.length);
+            IO.println("Error: height must be positive.");
+            IO.println("height remains: " + this.height);
             return;
         }
-        this.length = length;
+        this.height = height;
     }
 
     double calculateArea() {
-        return width * length;
+        return width * height;
     }
 
-    // UNDERSTAND: Returns perimeter of rectangle = 2 * (width + length)
+    // UNDERSTAND: Returns perimeter of rectangle = 2 * (width + height)
     // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
     double calculatePerimeter() {
-        return 2 * (width + length);
+        return 2 * (width + height);
     }
 }

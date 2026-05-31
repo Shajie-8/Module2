@@ -33,5 +33,11 @@ class Circle {
     double calculateArea() {
         return Math.PI * radius * radius;
     }
+
+    // UNDERSTAND: Returns circumference of circle = 2 * π * radius
+    // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
+    double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
 }
 

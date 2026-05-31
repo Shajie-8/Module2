@@ -41,9 +41,18 @@ class Ellipse {
     }
 
     // UNDERSTAND: Returns area of ellipse
-    //: Uses Math.PI for precision instead of hardcoding 3.14
+    // DECISION: Uses Math.PI for precision instead of hardcoding 3.14
     double calculateArea() {
         return Math.PI * semiMajorAxis * semiMinorAxis;
     }
 
+    // UNDERSTAND: Returns approximate perimeter using Ramanujan's formula
+    // DECISION: Exact ellipse perimeter requires infinite series
+    // TRACE: h = ((a - b) / (a + b))^2 is a intermediate value used in the formula
+    double calculatePerimeter() {
+        double a = semiMajorAxis;
+        double b = semiMinorAxis;
+        double h = Math.pow((a - b) / (a + b), 2);
+        return Math.PI * (a + b) * (1 + (3 * h) / (10 + Math.sqrt(4 - 3 * h)));
+    }
 }

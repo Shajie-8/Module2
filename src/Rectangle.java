@@ -10,7 +10,7 @@ class Rectangle {
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
     Rectangle(double width, double height) {
         setWidth(width);
-        setheight(height);
+        setHeight(height);
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)
@@ -18,7 +18,7 @@ class Rectangle {
         return width;
     }
 
-    double getheight(){
+    double getHeight(){
         return height;
     }
 
@@ -35,7 +35,7 @@ class Rectangle {
         this.width = width;
     }
 
-    void setheight(double height) {
+    void setHeight(double height) {
         if (height <= 0) {
             // TRACE: Validation error occurs when width <=0
             IO.println("Error: height must be positive.");

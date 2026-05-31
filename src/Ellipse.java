@@ -31,6 +31,12 @@ class Ellipse {
         }
         this.semiMajorAxis = semiMajorAxis;
     }
-
-}
+    void setSemiMinorAxis(double semiMinorAxis) {
+        if (semiMinorAxis <= 0) {
+            IO.println("Error: Semi-minor axis must be positive.");
+            IO.println("Semi-minor axis remains: " + this.semiMinorAxis);
+            return;
+        }
+        this.semiMinorAxis = semiMinorAxis;
+    }
 }

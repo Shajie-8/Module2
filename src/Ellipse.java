@@ -68,4 +68,21 @@ class Ellipse {
         double h = Math.pow((a - b) / (a + b), 2);
         return Math.PI * (a + b) * (1 + (3 * h) / (10 + Math.sqrt(4 - 3 * h)));
     }
+
+    // UNDERSTAND: Point (col, row) is inside/on ellipse if (col/a)^2 + (row/b)^2 <= 1.
+    // TRACE: a=6, b=3 -> horizontally stretched ellipse shape in ASCII chars.
+    void display() {
+        int a = Math.max(3, (int) Math.round(semiMajorAxis));
+        int b = Math.max(2, (int) Math.round(semiMinorAxis));
+        for (int row = -b; row <= b; row++) {
+            for (int col = -a; col <= a; col++) {
+                double val = (double)(col * col) / (a * a) + (double)(row * row) / (b * b);
+                boolean onBorder = (val >= 0.75 && val <= 1.25);
+                boolean inside   = (val < 0.75);
+                IO.print((filled && inside) || onBorder ? "* " : "  ");
+            }
+            IO.println("");
+        }
+    }
+
 }

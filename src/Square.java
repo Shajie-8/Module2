@@ -28,9 +28,8 @@ class Square {
     // Getter for side
     // UNDERSTAND: Provides controlled access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)
-    double getSide() {
-        return side;
-    }
+    double getSide() { return side; }
+    boolean isFilled() { return  filled; }
 
     // Setter for side with validation
     // UNDERSTAND: Allows modification of side with input validation (positive numbers only)
@@ -61,5 +60,17 @@ class Square {
         return 4 * side;
     }
 
-
+    // UNDERSTAND: Renders a square using "*" in ACII
+    // DECISION: Scales output by rounding side to nearest integer for display.
+    // TRACE: side=5, filled=true -> 5x5 block of "*"
+    void display() {
+        int s = Math.max(2, (int) Math.round(side));
+        for (int c = 0; c < s; r++) {
+            for (int c = 0; c < s; c++) {
+                boolean border = (r == 0 || r == s - 1 || c == 0 || c == s-1);
+                IO.print((filled || border) ? "*" : " ");
+            }
+            IO.println("");
+        }
+    }
 }

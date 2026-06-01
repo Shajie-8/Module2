@@ -65,7 +65,7 @@ class Square {
     // TRACE: side=5, filled=true -> 5x5 block of "*"
     void display() {
         int s = Math.max(2, (int) Math.round(side));
-        for (int c = 0; c < s; r++) {
+        for (int r = 0; r < s; r++) {
             for (int c = 0; c < s; c++) {
                 boolean border = (r == 0 || r == s - 1 || c == 0 || c == s-1);
                 IO.print((filled || border) ? "*" : " ");

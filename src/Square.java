@@ -6,6 +6,14 @@ class Square {
     // Understand: Private access restricts direct modification from outside the class
     // DECISION: side is stored as double (not int) to support fractional measurements
     private double side;
+    private boolean filled;
+
+    // Default Constructors
+    // UNDERSTAND: Creates a unit square as a safe default state.
+    Square() {
+        this.side = 1.0;
+        this.filled = false;
+    }
 
     // Constructor
     // UNDERSTAND: Called when a new Square object is created - initializes object state
@@ -13,7 +21,9 @@ class Square {
     // AI-CHECK: Confirmed with textbook that setter delegation is a standard pattern
     Square(double side) {
         setSide(side); // Using setter for validation
+        setFilled(filled);
     }
+
 
     // Getter for side
     // UNDERSTAND: Provides controlled access to private field
@@ -35,6 +45,8 @@ class Square {
         }
         this.side = side;
     }
+
+    void setFilled(boolean filled) {this.filled = filled;}
     // Method to calculate area
     // UNDERSTAND: Returns area of square = side * side
     // DECISION: No input parameters needed (side already stored in object state)
@@ -48,4 +60,6 @@ class Square {
     double calculatePerimeter() {
         return 4 * side;
     }
+
+
 }

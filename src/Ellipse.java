@@ -6,11 +6,19 @@ class Ellipse {
     private double semiMinorAxis;
     private boolean filled;
 
-   // UNDERSTAND: Called when a new Ellipse object is created
+    // Default Constructors
+    Ellipse() {
+        this.semiMajorAxis = 2.0;
+        this.semiMinorAxis = 1.0;
+        this.filled    = false;
+    }
+
+    // UNDERSTAND: Called when a new Ellipse object is created
    // DECISION: Delegates to setters for validation
     Ellipse(double semiMajorAxis, double semiMinorAxis) {
         setSemiMajorAxis(semiMajorAxis);
         setSemiMinorAxis(semiMinorAxis);
+        setFilled(filled);
     }
 
     // UNDERSTAND: Provides controlled read access to private fields
@@ -21,6 +29,8 @@ class Ellipse {
     double getSemiMinorAxis() {
         return semiMinorAxis;
     }
+    boolean isFilled() { return filled; }
+
     // UNDERSTAND: Allow modification of semiMajorAxis with input validations
     // DECISION: Used early return pattern for valid input
     void setSemiMajorAxis(double semiMajorAxis) {
@@ -40,6 +50,8 @@ class Ellipse {
         }
         this.semiMinorAxis = semiMinorAxis;
     }
+
+    void setFilled(boolean filled) { this.filled = filled; }
 
     // UNDERSTAND: Returns area of ellipse
     // DECISION: Uses Math.PI for precision instead of hardcoding 3.14

@@ -5,12 +5,20 @@ class Rectangle {
     // DECISION: height and width stored as double to support fraction
     private double height;
     private double width;
+    private boolean filled;
 
+    // Default Constructors
+    Rectangle() {
+        this.height = 1.0;
+        this.width = 1.0;
+        this.filled = false;
+    }
     // UNDERSTAND: Called when a new Rectangle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
     Rectangle(double width, double height) {
         setWidth(width);
         setHeight(height);
+        setFilled(filled)
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)

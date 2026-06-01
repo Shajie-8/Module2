@@ -3,6 +3,7 @@ class Circle {
     // UNDERSTAND: Private field restricts direct modification from outside the class
     // DECISION: radius stored as double to support fractional measurements
     private double radius;
+    private boolean filled;
 
     // UNDERSTAND: Called when a new Circle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)

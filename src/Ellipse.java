@@ -4,6 +4,7 @@ class Ellipse {
     // DECISION: Both stored as double to support fractional measurements
     private double semiMajorAxis;
     private double semiMinorAxis;
+    private boolean filled;
 
    // UNDERSTAND: Called when a new Ellipse object is created
    // DECISION: Delegates to setters for validation

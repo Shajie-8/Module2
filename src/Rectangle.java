@@ -46,12 +46,14 @@ class Rectangle {
     void setHeight(double height) {
         if (height <= 0) {
             // TRACE: Validation error occurs when width <=0
-            IO.println("Error: height must be positive.");
-            IO.println("height remains: " + this.height);
+            IO.println("Error: Height must be positive.");
+            IO.println("Height remains: " + this.height);
             return;
         }
         this.height = height;
     }
+
+    void setFilled(boolean filled) { this.filled = filled; }
 
     double calculateArea() {
         return width * height;
@@ -61,5 +63,17 @@ class Rectangle {
     // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
     double calculatePerimeter() {
         return 2 * (width + height);
+    }
+
+    void display() {
+        int l = Math.max(2, (int) Math.round(height));
+        int w = Math.max(2, (int) Math.round(width));
+        for (int r = 0; r < w; r++) {
+            for (int c = 0; c < l; c++) {
+                boolean border = (r == 0 || r == w - 1 || c == 0 || c == l - 1);
+                IO.print((filled || border) ? "* " : "  ");
+            }
+            IO.println("");
+        }
     }
 }

@@ -18,7 +18,7 @@ class Rectangle {
     Rectangle(double width, double height) {
         setWidth(width);
         setHeight(height);
-        setFilled(filled)
+        setFilled(filled);
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)

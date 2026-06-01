@@ -5,10 +5,16 @@ class Circle {
     private double radius;
     private boolean filled;
 
+    // Default Constructors
+    Circle() {
+        this.radius = 1.0;
+        this.filled = false;
+    }
+
     // UNDERSTAND: Called when a new Circle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
-    Circle(double radius) {
-    setRadius (radius);
+    Circle(double radius, boolean filled) {
+    setRadius (radius); setFilled(filled);
     }
 
     // UNDERSTAND: Provides controlled read access to private field

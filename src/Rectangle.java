@@ -65,6 +65,7 @@ class Rectangle {
         return 2 * (width + height);
     }
 
+    // TRACE: length=6, width=3, filled=false -> border-only 6x3 rectangle
     void display() {
         int l = Math.max(2, (int) Math.round(height));
         int w = Math.max(2, (int) Math.round(width));

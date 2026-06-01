@@ -22,6 +22,7 @@ class Circle {
     double getRadius() {
         return radius;
     }
+    boolean isFilled() { return filled; }
 
     // UNDERSTAND: Allows modifications of radius with input validation
     // DECISION: Used early return pattern for invalid input
@@ -34,6 +35,7 @@ class Circle {
         }
         this.radius = radius;
     }
+    void setFilled(boolean filled) { this.filled = filled; }
 
     // UNDERSTAND: Returns area of circle = π * radius²
     // DECISION: Uses Math.PI for precision instead of hardcoding 3.14
@@ -46,5 +48,22 @@ class Circle {
     double calculatePerimeter() {
         return 2 * Math.PI * radius;
     }
+
+    // UNDERSTAND: Approximates a circle on a character grid using distance from center.
+    // DECISION: Each cell is 2 chars wide to compensate for character aspect ratio.
+    // TRACE: radius=4 -> roughly circular outline of '*' chars on an 8x8 grid.
+    void display() {
+        int r = Math.max(3, (int) Math.round(radius));
+        for (int row = -r; row <= r; row++) {
+            for (int col = -r; col <= r; col++) {
+                double dist = Math.sqrt(row * row + col * col);
+                boolean onBorder = (dist >= r - 0.7 && dist <= r + 0.7);
+                boolean inside   = (dist < r - 0.7);
+                IO.print((filled && inside) || onBorder ? "* " : "  ");
+            }
+            IO.println("");
+        }
+    }
+
 }
 

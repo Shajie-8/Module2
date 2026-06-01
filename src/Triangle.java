@@ -7,3 +7,11 @@ class Triangle {
     private double base;
     private double height;
     private boolean filled;
+
+    // Default Constructors
+    Triangle() {
+        this.base = 3.0;
+        this.height = 4.0;
+        this.filled = false;
+    }
+}

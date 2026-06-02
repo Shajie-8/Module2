@@ -24,5 +24,16 @@ class Triangle {
     // Getters
     double getBase() { return base; }
     double getHeight() { return height; }
-    double isFilled() { return filled; }
+    boolean isFilled() { return filled; }
+
+    // Setters
+    void setBase (double base) {
+        if (base <= 0) {
+            IO.println("Error: Base must be positive.");
+            IO.println("Base remains: " + this.base);
+            return;
+        }
+        this.base = base;
+    }
+
 }

@@ -14,4 +14,15 @@ class Triangle {
         this.height = 4.0;
         this.filled = false;
     }
+
+    Triangle(double base, double height, boolean filled) {
+        setBase(base);
+        setHeight(height);
+        setFilled(filled);
+    }
+
+    // Getters
+    double getBase() { return base; }
+    double getHeight() { return height; }
+    double isFilled() { return filled; }
 }

@@ -1,7 +1,3 @@
-// UNDERSTAND: Models a right triangle using base and height.
-// DECISION: Used right triangle (base, height) since hypotenuse is derivable via Pythagoras.
-//           Area = 0.5*base*height; Perimeter = base + height + hypotenuse.
-
 class Triangle {
 
     private double base;
@@ -42,5 +38,27 @@ class Triangle {
             return;
         }
         this.height = height;
+    }
+    void setFilled(boolean filled) { this.filled = filled; }
+
+    // Calculations
+    double getHypotenuse() { return Math.sqrt(base *  + height * height); }
+    double calculateArea() { return 0.5 * base * height; }
+    double calculatePerimeter() { return base + height + getHypotenuse(); }
+
+    // ASCII Art
+    // UNDERSTAND: Draws a right triangle with the right angle at bottom-left.
+    // TRACE: base=5, height=5 -> staircase-like triangle pointing right and down.
+    void display() {
+        int h = Math.max(2, (int) Math.round(height));
+        for (int row = 0; row < h; row++) {
+            int cols = (int) Math.round((row + 1) * ((double) Math.round(base) / h));
+            cols = Math.max(1, cols);
+            for (int col = 0; col < cols; col++) {
+                boolean border = (row == h - 1 || col == 0 || col == cols - 1);
+                IO.print((filled || border) ? "*" : " ");
+            }
+            IO.println("");
+        }
     }
 }

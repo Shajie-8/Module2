@@ -65,6 +65,14 @@ class Circle {
             IO.println("");
         }
     }
+    static void main() {
+        IO.println("Filled Circle, RADIUS = 5:");
+        Circle c1 = new Circle(5, true);
+        c1.display();
 
+        IO.println("\nHollow Circle, RADIUS = 5:");
+        Circle c2 = new Circle(5, false);
+        c2.display();
+    }
 }
 

@@ -84,5 +84,13 @@ class Ellipse {
             IO.println("");
         }
     }
+    static void main() {
+        IO.println("Filled Ellipse, semiMajor = 8, semiMinor = 4:");
+        Ellipse e1 = new Ellipse(8, 4, true);
+        e1.display();
 
+        IO.println("\nHollow Ellipse, semiMajor = 8, semiMinor = 4:");
+        Ellipse e2 = new Ellipse(8, 4, false);
+        e2.display();
+    }
 }

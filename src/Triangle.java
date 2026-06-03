@@ -56,9 +56,18 @@ class Triangle {
             cols = Math.max(1, cols);
             for (int col = 0; col < cols; col++) {
                 boolean border = (row == h - 1 || col == 0 || col == cols - 1);
-                IO.print((filled || border) ? "*" : " ");
+                IO.print((filled || border) ? "* " : "  ");
             }
             IO.println("");
         }
+    }
+    static void main() {
+        IO.println("Filled Triangle (base=6, height=5):");
+        Triangle t1 = new Triangle(6, 5, true);
+        t1.display();
+
+        IO.println("\nHollow Triangle (base=6, height=5):");
+        Triangle t2 = new Triangle(6, 5, false);
+        t2.display();
     }
 }

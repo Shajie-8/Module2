@@ -65,9 +65,18 @@ class Square {
         for (int r = 0; r < s; r++) {
             for (int c = 0; c < s; c++) {
                 boolean border = (r == 0 || r == s - 1 || c == 0 || c == s-1);
-                IO.print((filled || border) ? "*" : " ");
+                IO.print((filled || border) ? "* " : "  ");
             }
             IO.println("");
         }
+    }
+    static void main() {
+        IO.println("Filled Square:");
+        Square s1 = new Square(6, true);
+        s1.display();
+
+        IO.println("\nHollow Square:");
+        Square s2 = new Square(6, false);
+        s2.display();
     }
 }

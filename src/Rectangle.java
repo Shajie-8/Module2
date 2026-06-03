@@ -77,4 +77,13 @@ class Rectangle {
             IO.println("");
         }
     }
+    static void main() {
+        IO.println("Filled Rectangle (8 x 5):");
+        Rectangle r1 = new Rectangle(8, 5, true);
+        r1.display();
+
+        IO.println("\nHollow Rectangle (8 x 5):");
+        Rectangle r2 = new Rectangle(8, 5, false);
+        r2.display();
+    }
 }

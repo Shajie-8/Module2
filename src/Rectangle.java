@@ -67,11 +67,11 @@ class Rectangle {
 
     // TRACE: length=6, width=3, filled=false -> border-only 6x3 rectangle
     void display() {
-        int l = Math.max(2, (int) Math.round(height));
+        int h = Math.max(2, (int) Math.round(height));
         int w = Math.max(2, (int) Math.round(width));
-        for (int r = 0; r < w; r++) {
-            for (int c = 0; c < l; c++) {
-                boolean border = (r == 0 || r == w - 1 || c == 0 || c == l - 1);
+        for (int r = 0; r < h; r++) {
+            for (int c = 0; c < w; c++) {
+                boolean border = (r == 0 || r == h - 1 || c == 0 || c == w - 1);
                 IO.print((filled || border) ? "* " : "  ");
             }
             IO.println("");

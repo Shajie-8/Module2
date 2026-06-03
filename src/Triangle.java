@@ -63,11 +63,11 @@ class Triangle {
     }
     static void main() {
         IO.println("Filled Triangle (base=6, height=5):");
-        Triangle t1 = new Triangle(6, 5, true);
+        Triangle t1 = new Triangle(6, 6, true);
         t1.display();
 
         IO.println("\nHollow Triangle (base=6, height=5):");
-        Triangle t2 = new Triangle(6, 5, false);
+        Triangle t2 = new Triangle(6, 6, false);
         t2.display();
     }
 }

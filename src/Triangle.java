@@ -35,5 +35,12 @@ class Triangle {
         }
         this.base = base;
     }
-
+    void setHeight (double height) {
+        if (height <= 0) {
+            IO.println("Error: Height must be positive.");
+            IO.println("Height remains: " + this.height);
+            return;
+        }
+        this.height = height;
+    }
 }

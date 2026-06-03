@@ -15,7 +15,7 @@ class Ellipse {
 
     // UNDERSTAND: Called when a new Ellipse object is created
    // DECISION: Delegates to setters for validation
-    Ellipse(double semiMajorAxis, double semiMinorAxis) {
+    Ellipse(double semiMajorAxis, double semiMinorAxis, boolean filled) {
         setSemiMajorAxis(semiMajorAxis);
         setSemiMinorAxis(semiMinorAxis);
         setFilled(filled);

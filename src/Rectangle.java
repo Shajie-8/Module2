@@ -15,7 +15,7 @@ class Rectangle {
     }
     // UNDERSTAND: Called when a new Rectangle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
-    Rectangle(double width, double height) {
+    Rectangle(double width, double height, boolean filled) {
         setWidth(width);
         setHeight(height);
         setFilled(filled);

@@ -61,11 +61,11 @@ class ShapesCalculator {
         Square square = new Square(side, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
-        // DECISION: Used String.format("%.4f") for consistent 4 decimal place output
+        // DECISION: Used String.format("%.2f") for consistent 2 decimal place output
         printSeparator();
         IO.println("Side: " + square.getSide() + "units");
-        IO.println("Area: " + String.format("%4f", square.calculateArea()) + " sq. units");
-        IO.println("Area: " + String.format("%4f", square.calculatePerimeter()) + " units");
+        IO.println("Area: " + String.format("%.2f", square.calculateArea()) + " sq. units");
+        IO.println("Area: " + String.format("%.2f", square.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII using stored side and filled values inside Square
@@ -102,8 +102,8 @@ class ShapesCalculator {
         printSeparator();
         IO.println("Width: " + rect.getWidth() + " units");
         IO.println("Height: " + rect.getHeight() + " units");
-        IO.println("Area: " + String.format("%.4f", rect.calculateArea()) + " sq. units");
-        IO.println("Perimeter: " + String.format("%.4f", rect.calculatePerimeter()) + " units");
+        IO.println("Area: " + String.format("%.2f", rect.calculateArea()) + " sq. units");
+        IO.println("Perimeter: " + String.format("%.2f", rect.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII using stored width, height, filled
@@ -136,8 +136,8 @@ class ShapesCalculator {
         // DECISION: Used "Circumference" label since that is the correct term for circles
         printSeparator();
         IO.println("Radius: " + circle.getRadius() + " units");
-        IO.println("Area: " + String.format("%.4f", circle.calculateArea()) + " sq. units");
-        IO.println("Circumference: " + String.format("%.4f", circle.calculatePerimeter()) + " units");
+        IO.println("Area: " + String.format("%.2f", circle.calculateArea()) + " sq. units");
+        IO.println("Circumference: " + String.format("%.2f", circle.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII using stored radius and filled values
@@ -175,8 +175,8 @@ class ShapesCalculator {
         printSeparator();
         IO.println("  Semi-Major Axis   : " + ellipse.getSemiMajorAxis() + " units");
         IO.println("  Semi-Minor Axis   : " + ellipse.getSemiMinorAxis() + " units");
-        IO.println("  Area              : " + String.format("%.4f", ellipse.calculateArea()) + " sq. units");
-        IO.println("  Perimeter (approx): " + String.format("%.4f", ellipse.calculatePerimeter()) + " units");
+        IO.println("  Area              : " + String.format("%.2f", ellipse.calculateArea()) + " sq. units");
+        IO.println("  Perimeter (approx): " + String.format("%.2f", ellipse.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII using stored semiMajorAxis, semiMinorAxis, filled
@@ -213,14 +213,14 @@ class ShapesCalculator {
         // UNDERSTAND: calculateArea() returns 0.5 * base * height
         // UNDERSTAND: calculatePerimeter() returns base + height + hypotenuse
         // DECISION: Displayed hypotenuse separately since it is a unique Triangle feature
-        // DECISION: Used String.format("%.4f") for all doubles for consistent formatting
+        // DECISION: Used String.format("%.2f") for all doubles for consistent formatting
         // TRACE: All values retrieved via getters to confirm setter validation was applied
         printSeparator();
         IO.println("  Base        : " + triangle.getBase() + " units");
         IO.println("  Height      : " + triangle.getHeight() + " units");
-        IO.println("  Hypotenuse  : " + String.format("%.4f", triangle.getHypotenuse()) + " units");
-        IO.println("  Area        : " + String.format("%.4f", triangle.calculateArea()) + " sq. units");
-        IO.println("  Perimeter   : " + String.format("%.4f", triangle.calculatePerimeter()) + " units");
+        IO.println("  Hypotenuse  : " + String.format("%.2f", triangle.getHypotenuse()) + " units");
+        IO.println("  Area        : " + String.format("%.2f", triangle.calculateArea()) + " sq. units");
+        IO.println("  Perimeter   : " + String.format("%.2f", triangle.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII art row by row using stored base, height, filled
@@ -228,5 +228,5 @@ class ShapesCalculator {
         triangle.display();
         printSeparator();
     }
-
+    
 }

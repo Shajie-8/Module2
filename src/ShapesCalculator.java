@@ -58,7 +58,7 @@ class ShapesCalculator {
         // TRACE: filled=true -> display() renders solid block; false -> border only
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
-        Square square = new Square(side,filled);
+        Square square = new Square(side, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
         // DECISION: Used String.format("%.4f") for consistent 4 decimal place output
@@ -74,6 +74,7 @@ class ShapesCalculator {
         printSeparator();
 
     }
+
     // UNDERSTAND: Handles all Rectangle-related input, object creation, and output
     // DECISION: Reads width, height, filled before object creation to match constructor
     // TRACE: Reads width -> reads height -> reads filled -> creates Rectangle -> prints
@@ -109,5 +110,16 @@ class ShapesCalculator {
         IO.println("ASCII Art:");
         rect.display();
         printSeparator();
+    }
+
+    // UNDERSTAND: Handles all Circle-related input, object creation, and output
+    // DECISION: Named output label "Circumference" instead of "Perimeter" for accuracy
+    // TRACE: Reads radius -> reads filled -> creates Circle -> prints results -> calls display()
+    static void handleCircle() {
+        IO.println();
+        printSeparator();
+        IO.println("              CIRCLE                 ");
+        printSeparator();
+
     }
 }

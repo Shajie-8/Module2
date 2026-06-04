@@ -12,6 +12,7 @@ public class Sphere {
     Sphere(double radius) {
         this.radius = radius;
     }
+
     // UNDERSTAND: Returns the radius
     double getRadius() {
         return radius;
@@ -20,5 +21,15 @@ public class Sphere {
     // UNDERSTAND: Updates the radius
     void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    // UNDERSTAND: Surface Area = 4πr²
+    double calculateSurfaceArea() {
+        return 4 * Math.PI * radius * radius;
+    }
+
+    // UNDERSTAND: Volume = (4/3)πr³
+    double calculateVolume() {
+        return (4.0 / 3.0) * Math.PI * radius * radius * radius;
     }
 }

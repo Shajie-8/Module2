@@ -20,4 +20,14 @@ public class Cone {
     double getSlantHeight() {
         return Math.sqrt(radius * radius + height * height);
     }
+
+    // UNDERSTAND: Surface Area = πr(r + slant height)
+    double calculateSurfaceArea() {
+        return Math.PI * radius * (radius + getSlantHeight());
+    }
+
+    // UNDERSTAND: Volume = (1/3)πr²h
+    double calculateVolume() {
+        return (1.0 / 3.0) * Math.PI * radius * radius * height;
+    }
 }

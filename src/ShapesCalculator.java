@@ -155,4 +155,34 @@ class ShapesCalculator {
         IO.println("             ELLIPSE                 ");
         printSeparator();
 
+        // UNDERSTAND: Semi-major axis (a) is the longer radius of the ellipse
+        // UNDERSTAND: Semi-minor axis (b) is the shorter radius of the ellipse
+        // TRACE: Both passed to Ellipse(double semiMajorAxis, double semiMinorAxis, boolean filled)
+        IO.print("Enter semi-major axis (a): ");
+        double semiMajor = Double.parseDouble(IO.readln().trim());
+        IO.print("Enter semi-minor axis (b): ");
+        double semiMinor = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Filled? (true/false): ");
+        boolean filled = Boolean.parseBoolean(IO.readln().trim());
+
+        // TRACE: Creates Ellipse - constructor delegates to setSemiMajorAxis(), setSemiMinorAxis()
+        Ellipse ellipse = new Ellipse(semiMajor, semiMinor, filled);
+
+        // UNDERSTAND: calculateArea() returns PI * a * b
+        // UNDERSTAND: calculatePerimeter() uses Ramanujan's approximation formula
+        // DECISION: Labeled perimeter as "approx" to clarify it is not mathematically exact
+        printSeparator();
+        IO.println("  Semi-Major Axis   : " + ellipse.getSemiMajorAxis() + " units");
+        IO.println("  Semi-Minor Axis   : " + ellipse.getSemiMinorAxis() + " units");
+        IO.println("  Area              : " + String.format("%.4f", ellipse.calculateArea()) + " sq. units");
+        IO.println("  Perimeter (approx): " + String.format("%.4f", ellipse.calculatePerimeter()) + " units");
+        printSeparator();
+
+        // TRACE: display() renders ASCII using stored semiMajorAxis, semiMinorAxis, filled
+        IO.println("ASCII Art:");
+        ellipse.display();
+        printSeparator();
     }
+
+}

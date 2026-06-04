@@ -13,4 +13,23 @@ public class Cube {
         this.side = side;
     }
 
+    // UNDERSTAND: Returns the side length
+    double getSide() {
+        return side;
+    }
+
+    // UNDERSTAND: Updates the side length
+    void setSide(double side) {
+        this.side = side;
+    }
+
+    // UNDERSTAND: Surface Area = 6 × side²
+    double calculateSurfaceArea() {
+        return 6 * side * side;
+    }
+
+    // UNDERSTAND: Volume = side³
+    double calculateVolume() {
+        return side * side * side;
+    }
 }

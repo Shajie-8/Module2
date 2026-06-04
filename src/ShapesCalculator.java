@@ -185,4 +185,14 @@ class ShapesCalculator {
         printSeparator();
     }
 
-}
+    // UNDERSTAND: Handles all Triangle-related input, object creation, and output
+    // DECISION: Added hypotenuse display since Triangle uniquely has getHypotenuse()
+    // DECISION: Triangle assumes right triangle - base and height are the two legs
+    // TRACE: Reads base -> reads height -> reads filled -> creates Triangle -> prints
+    static void handleTriangle() {
+        IO.println();
+        printSeparator();
+        IO.println("            TRIANGLE                 ");
+        printSeparator();
+
+    }

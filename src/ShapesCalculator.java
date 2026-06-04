@@ -228,5 +228,25 @@ class ShapesCalculator {
         triangle.display();
         printSeparator();
     }
-    
+
+    // 3D SOLID HANDLES
+    // UNDERSTAND: Handles Cube input/output
+    // TRACE: side -> new Cube -> surface area -> volume -> print results
+    static void handleCube() {
+        IO.println();
+        printSeparator();
+        IO.println("               CUBE:                 ");
+        printSeparator();
+        IO.print("Enter side length: ");
+        double side = Double.parseDouble(IO.readln().trim());
+
+        // UNDERSTAND: Creates a Cube object using the entered side length.
+        Cube cube = new Cube(side);
+        printSeparator();
+        IO.println("RESULTS:");
+        IO.println("Surface Area: " + String.format("%.2f", cube.calculateSurfaceArea()));
+        IO.println("Volume: " + String.format("%.2f", cube.calculateVolume()));
+        printSeparator();
+    }
+
 }

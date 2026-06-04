@@ -74,4 +74,40 @@ class ShapesCalculator {
         printSeparator();
 
     }
+    // UNDERSTAND: Handles all Rectangle-related input, object creation, and output
+    // DECISION: Reads width, height, filled before object creation to match constructor
+    // TRACE: Reads width -> reads height -> reads filled -> creates Rectangle -> prints
+    static void handleRectangle() {
+        IO.println();
+        printSeparator();
+        IO.println("            RECTANGLE                ");
+        printSeparator();
+
+        // TRACE: width and height both read before object creation
+        // DECISION: Matches Rectangle(double width, double height, boolean filled) signature
+        IO.print("Enter width: ");
+        double width = Double.parseDouble(IO.readln().trim());
+        IO.print("Enter height: ");
+        double height = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Filled? (true/false): ");
+        boolean filled = Boolean.parseBoolean(IO.readln().trim());
+
+        // TRACE: Creates Rectangle - constructor delegates to setWidth(), setHeight(), setFilled()
+        Rectangle rect = new Rectangle(width, height, filled);
+
+        // UNDERSTAND: getWidth() and getHeight() return validated stored values
+        // DECISION: Display stored values (not raw input) to show setter validation worked
+        printSeparator();
+        IO.println("Width: " + rect.getWidth() + " units");
+        IO.println("Height: " + rect.getHeight() + " units");
+        IO.println("Area: " + String.format("%.4f", rect.calculateArea()) + " sq. units");
+        IO.println("Perimeter: " + String.format("%.4f", rect.calculatePerimeter()) + " units");
+        printSeparator();
+
+        // TRACE: display() renders ASCII using stored width, height, filled
+        IO.println("ASCII Art:");
+        rect.display();
+        printSeparator();
+    }
 }

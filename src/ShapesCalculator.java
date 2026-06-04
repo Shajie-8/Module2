@@ -121,5 +121,29 @@ class ShapesCalculator {
         IO.println("              CIRCLE                 ");
         printSeparator();
 
+        // TRACE: radius and filled passed to Circle(double radius, boolean filled) constructor
+        IO.print("Enter radius: ");
+        double radius = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Filled? (true/false): ");
+        boolean filled = Boolean.parseBoolean(IO.readln().trim());
+
+        // TRACE: Creates Circle - constructor delegates to setRadius() and setFilled()
+        Circle circle = new Circle(radius, filled);
+
+        // UNDERSTAND: calculateArea() returns PI * r^2
+        // UNDERSTAND: calculatePerimeter() returns 2 * PI * r (circumference)
+        // DECISION: Used "Circumference" label since that is the correct term for circles
+        printSeparator();
+        IO.println("Radius: " + circle.getRadius() + " units");
+        IO.println("Area: " + String.format("%.4f", circle.calculateArea()) + " sq. units");
+        IO.println("Circumference: " + String.format("%.4f", circle.calculatePerimeter()) + " units");
+        printSeparator();
+
+        // TRACE: display() renders ASCII using stored radius and filled values
+        IO.println("ASCII Art:");
+        circle.display();
+        printSeparator();
     }
+
 }

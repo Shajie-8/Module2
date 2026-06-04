@@ -1,5 +1,5 @@
 // UNDERSTAND: This class models a geometric circle
-class Circle {
+public class Circle {
     // UNDERSTAND: Private field restricts direct modification from outside the class
     // DECISION: radius stored as double to support fractional measurements
     private double radius;

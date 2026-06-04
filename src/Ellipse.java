@@ -1,5 +1,5 @@
 // UNDERSTAND: This class models a geometric ellipse
-class Ellipse {
+public class Ellipse {
     // UNDERSTAND: Private fields restrict direct modification from outside the class
     // DECISION: Both stored as double to support fractional measurements
     private double semiMajorAxis;

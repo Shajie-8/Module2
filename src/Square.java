@@ -1,4 +1,4 @@
-class Square {
+public class Square {
     // Data field (attribute)
     // Understand: Private access restricts direct modification from outside the class
     // DECISION: side is stored as double (not int) to support fractional measurements

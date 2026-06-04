@@ -205,4 +205,28 @@ class ShapesCalculator {
 
         IO.print("Filled? (true/false): ");
     boolean filled = Boolean.parseBoolean(IO.readln().trim());
+
+        // TRACE: Creates Triangle - constructor delegates to setBase(), setHeight(), setFilled()
+        Triangle triangle = new Triangle(base, height, filled);
+
+        // UNDERSTAND: getHypotenuse() computes sqrt(base^2 + height^2) internally
+        // UNDERSTAND: calculateArea() returns 0.5 * base * height
+        // UNDERSTAND: calculatePerimeter() returns base + height + hypotenuse
+        // DECISION: Displayed hypotenuse separately since it is a unique Triangle feature
+        // DECISION: Used String.format("%.4f") for all doubles for consistent formatting
+        // TRACE: All values retrieved via getters to confirm setter validation was applied
+        printSeparator();
+        IO.println("  Base        : " + triangle.getBase() + " units");
+        IO.println("  Height      : " + triangle.getHeight() + " units");
+        IO.println("  Hypotenuse  : " + String.format("%.4f", triangle.getHypotenuse()) + " units");
+        IO.println("  Area        : " + String.format("%.4f", triangle.calculateArea()) + " sq. units");
+        IO.println("  Perimeter   : " + String.format("%.4f", triangle.calculatePerimeter()) + " units");
+        printSeparator();
+
+        // TRACE: display() renders ASCII art row by row using stored base, height, filled
+        IO.println("ASCII Art:");
+        triangle.display();
+        printSeparator();
+    }
+
 }

@@ -146,4 +146,13 @@ class ShapesCalculator {
         printSeparator();
     }
 
-}
+    // UNDERSTAND: Handles all Ellipse-related input, object creation, and output
+    // DECISION: Two separate prompts for semi-major and semi-minor axes
+    // TRACE: Reads semiMajor -> reads semiMinor -> reads filled -> creates Ellipse -> prints
+    static void handleEllipse() {
+        IO.println();
+        printSeparator();
+        IO.println("             ELLIPSE                 ");
+        printSeparator();
+
+    }

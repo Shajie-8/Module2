@@ -12,4 +12,13 @@ public class Sphere {
     Sphere(double radius) {
         this.radius = radius;
     }
+    // UNDERSTAND: Returns the radius
+    double getRadius() {
+        return radius;
+    }
+
+    // UNDERSTAND: Updates the radius
+    void setRadius(double radius) {
+        this.radius = radius;
+    }
 }

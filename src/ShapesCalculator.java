@@ -195,4 +195,14 @@ class ShapesCalculator {
         IO.println("            TRIANGLE                 ");
         printSeparator();
 
-    }
+    // UNDERSTAND: base is the horizontal leg of the right triangle
+    // UNDERSTAND: height is the vertical leg of the right triangle
+    // TRACE: Both passed to Triangle(double base, double height, boolean filled) constructor
+        IO.print("Enter base: ");
+    double base = Double.parseDouble(IO.readln().trim());
+        IO.print("Enter height: ");
+    double height = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Filled? (true/false): ");
+    boolean filled = Boolean.parseBoolean(IO.readln().trim());
+}

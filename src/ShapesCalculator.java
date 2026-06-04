@@ -26,5 +26,24 @@ class ShapesCalculator {
             printSeparator();
             IO.print("Enter your choice (1 - 6): ");
             choice = Integer.parseInt(IO.readln().trim());
+
+            switch (choice) {
+                case 1 -> handleSquare();
+                case 2 -> handleRectangle();
+                case 3 -> handleCircle();
+                case 4 -> handleEllipse();
+                case 5 -> handleTriangle();
+                case 6 -> {
+                    printSeparator();
+                    IO.println("Exiting... Goodbye!");
+                    printSeparator();
+                }
+                default -> IO.println("Invalid choice. Please enter 1-6.");
+            }
+        } while (choice != 6);
+    }
+
+    static void handleSquare() {
+        IO
     }
 }

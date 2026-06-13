@@ -5,3 +5,12 @@ public abstract class Shape2D extends Shape implements Measurable2D {
         super();
         this.filled = false;
     }
+
+    public Shape2D(String color, boolean filled) {
+        super(color);
+        this.filled = filled;
+    }
+
+    public boolean isFilled() {
+        return filled;
+    }

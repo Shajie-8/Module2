@@ -3,10 +3,11 @@
 public class Circle extends Shape2D {
     private double radius;
 
-    // Default Constructors
-    Circle() {
+    // UNDERSTAND: Default state fallback constructor.
+    // TRACE: Chains red color and hollow status to Shape2D parent.
+    public Circle() {
+        super("red", false);
         this.radius = 1.0;
-        this.filled = false;
     }
 
     // UNDERSTAND: Called when a new Circle object is created - initializes object state

@@ -32,17 +32,17 @@ public class Circle extends Shape2D {
         }
         this.radius = radius;
     }
-    void setFilled(boolean filled) { this.filled = filled; }
 
-    // UNDERSTAND: Returns area of circle = π * radius²
-    // DECISION: Uses Math.PI for precision instead of hardcoding 3.14
-    double calculateArea() {
+    // UNDERSTAND: Overrides the Measurable2D contract using specialized mathematical equations.
+    @Override
+    public double calculateArea() {
         return Math.PI * radius * radius;
     }
 
     // UNDERSTAND: Returns circumference of circle = 2 * π * radius
     // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
-    double calculatePerimeter() {
+    @Override
+    public double calculatePerimeter() {
         return 2 * Math.PI * radius;
     }
 
@@ -61,14 +61,10 @@ public class Circle extends Shape2D {
             IO.println("");
         }
     }
-    static void main() {
-        IO.println("Filled Circle, RADIUS = 5:");
-        Circle c1 = new Circle(5, true);
-        c1.display();
-
-        IO.println("\nHollow Circle, RADIUS = 5:");
-        Circle c2 = new Circle(5, false);
-        c2.display();
+    // UNDERSTAND: Extends standard representation by combining unique attributes and parent state.
+    @Override
+    public String toString() {
+        return "Circle[radius=" + radius + ", " + super.toString() + "]";
     }
 }
 

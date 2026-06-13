@@ -10,11 +10,11 @@ public class Circle extends Shape2D {
         this.radius = 1.0;
     }
 
-    // UNDERSTAND: Called when a new Circle object is created - initializes object state
-    // DECISION: Delegates to setter for validation (reuses existing validation logic)
-    Circle(double radius, boolean filled) {
-    setRadius (radius);
-    setFilled(filled);
+    // UNDERSTAND: Subclass constructor initializes its specific attributes while delegating common states.
+    // DECISION: Delegates radius validation directly to the mutator method.
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
+        setRadius(radius);
     }
 
     // UNDERSTAND: Provides controlled read access to private field

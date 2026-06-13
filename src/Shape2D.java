@@ -14,3 +14,8 @@ public abstract class Shape2D extends Shape implements Measurable2D {
     public boolean isFilled() {
         return filled;
     }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+}

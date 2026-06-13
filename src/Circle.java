@@ -1,9 +1,7 @@
-// UNDERSTAND: This class models a geometric circle
-public class Circle {
-    // UNDERSTAND: Private field restricts direct modification from outside the class
-    // DECISION: radius stored as double to support fractional measurements
+// UNDERSTAND: Models a concrete geometric circle extending the 2D shape category.
+// DECISION: Inherits filled and color states from Shape2D.
+public class Circle extends Shape2D {
     private double radius;
-    private boolean filled;
 
     // Default Constructors
     Circle() {

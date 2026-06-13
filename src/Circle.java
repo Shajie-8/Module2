@@ -17,16 +17,13 @@ public class Circle extends Shape2D {
         setRadius(radius);
     }
 
-    // UNDERSTAND: Provides controlled read access to private field
-    // DECISION: No validation needed in getter (only returning value, not modifying)
-    double getRadius() {
+    public double getRadius() {
         return radius;
     }
-    boolean isFilled() { return filled; }
 
     // UNDERSTAND: Allows modifications of radius with input validation
     // DECISION: Used early return pattern for invalid input
-    void setRadius(double radius) {
+    public void setRadius(double radius) {
         if (radius <= 0) {
             // TRACE: Validation error occurs when radius <= 0
             IO.println("Error: Radius must be positive.");

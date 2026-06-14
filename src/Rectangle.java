@@ -18,18 +18,18 @@ public class Rectangle extends Shape2D {
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)
-    double getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    double getHeight(){
+    public double getHeight(){
         return height;
     }
 
     // UNDERSTAND: Allows modification of width with input validation (positive numbers only)
     // DECISION: Used early return pattern for invalid input (instead of throwing exception)
     // because this is designed for beginners learning control flow
-    void setWidth(double width) {
+    public void setWidth(double width) {
         if (width <= 0) {
             // TRACE: Validation error occurs when width <=0
             IO.println("Error: Width must be positive.");
@@ -39,7 +39,7 @@ public class Rectangle extends Shape2D {
         this.width = width;
     }
 
-    void setHeight(double height) {
+    public void setHeight(double height) {
         if (height <= 0) {
             // TRACE: Validation error occurs when width <=0
             IO.println("Error: Height must be positive.");
@@ -49,7 +49,6 @@ public class Rectangle extends Shape2D {
         this.height = height;
     }
 
-    void setFilled(boolean filled) { this.filled = filled; }
 
     double calculateArea() {
         return width * height;

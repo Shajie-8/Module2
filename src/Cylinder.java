@@ -1,17 +1,19 @@
-public class Cylinder {
+public class Cylinder extends Shape3D {
 
     // UNDERSTAND: Stores the radius and height
     private double radius;
     private double height;
 
     // UNDERSTAND: Default constructor
-    Cylinder() {
+    public Cylinder() {
+        super("red");
         radius = 1.0;
         height = 1.0;
     }
 
     // UNDERSTAND: Creates a cylinder with given dimensions
-    Cylinder(double radius, double height) {
+    public Cylinder(double radius, double height, String color) {
+        super(color);
         this.radius = radius;
         this.height = height;
     }

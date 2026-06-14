@@ -1,39 +1,37 @@
 // UNDERSTAND: This class models a geometric ellipse
-public class Ellipse {
+public class Ellipse extends Shape2D {
     // UNDERSTAND: Private fields restrict direct modification from outside the class
     // DECISION: Both stored as double to support fractional measurements
     private double semiMajorAxis;
     private double semiMinorAxis;
-    private boolean filled;
 
     // Default Constructors
     Ellipse() {
+        super("red", false);
         this.semiMajorAxis = 2.0;
         this.semiMinorAxis = 1.0;
-        this.filled    = false;
     }
 
     // UNDERSTAND: Called when a new Ellipse object is created
-   // DECISION: Delegates to setters for validation
-    Ellipse(double semiMajorAxis, double semiMinorAxis, boolean filled) {
+    // DECISION: Delegates to setters for validation
+    Ellipse(double semiMajorAxis, double semiMinorAxis, String color, boolean filled) {
+        super(color, filled);
         setSemiMajorAxis(semiMajorAxis);
         setSemiMinorAxis(semiMinorAxis);
-        setFilled(filled);
     }
 
     // UNDERSTAND: Provides controlled read access to private fields
     // DECISIONS: No validation needed in getter
-    double getSemiMajorAxis() {
+    public double getSemiMajorAxis() {
         return semiMajorAxis;
     }
-    double getSemiMinorAxis() {
+    public double getSemiMinorAxis() {
         return semiMinorAxis;
     }
-    boolean isFilled() { return filled; }
 
     // UNDERSTAND: Allow modification of semiMajorAxis with input validations
     // DECISION: Used early return pattern for valid input
-    void setSemiMajorAxis(double semiMajorAxis) {
+    public void setSemiMajorAxis(double semiMajorAxis) {
         if (semiMajorAxis <= 0) {
             //TRACE: Validation error occurs when semiMajorAxis <= 0
             IO.println("Error: Semi-major axis must be positive.");
@@ -42,7 +40,8 @@ public class Ellipse {
         }
         this.semiMajorAxis = semiMajorAxis;
     }
-    void setSemiMinorAxis(double semiMinorAxis) {
+
+    public void setSemiMinorAxis(double semiMinorAxis) {
         if (semiMinorAxis <= 0) {
             IO.println("Error: Semi-minor axis must be positive.");
             IO.println("Semi-minor axis remains: " + this.semiMinorAxis);
@@ -51,18 +50,18 @@ public class Ellipse {
         this.semiMinorAxis = semiMinorAxis;
     }
 
-    void setFilled(boolean filled) { this.filled = filled; }
-
     // UNDERSTAND: Returns area of ellipse
     // DECISION: Uses Math.PI for precision instead of hardcoding 3.14
-    double calculateArea() {
+    @Override
+    public double calculateArea() {
         return Math.PI * semiMajorAxis * semiMinorAxis;
     }
 
+    @Override
     // UNDERSTAND: Returns approximate perimeter using Ramanujan's formula
     // DECISION: Exact ellipse perimeter requires infinite series
     // TRACE: h = ((a - b) / (a + b))^2 is a intermediate value used in the formula
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         double a = semiMajorAxis;
         double b = semiMinorAxis;
         double h = Math.pow((a - b) / (a + b), 2);
@@ -71,7 +70,7 @@ public class Ellipse {
 
     // UNDERSTAND: Point (col, row) is inside/on ellipse if (col/a)^2 + (row/b)^2 <= 1.
     // TRACE: a=6, b=3 -> horizontally stretched ellipse shape in ASCII chars.
-    void display() {
+    public void display() {
         int a = Math.max(3, (int) Math.round(semiMajorAxis));
         int b = Math.max(2, (int) Math.round(semiMinorAxis));
         for (int row = -b; row <= b; row++) {
@@ -84,13 +83,9 @@ public class Ellipse {
             IO.println("");
         }
     }
-    static void main() {
-        IO.println("Filled Ellipse, semiMajor = 8, semiMinor = 4:");
-        Ellipse e1 = new Ellipse(8, 4, true);
-        e1.display();
 
-        IO.println("\nHollow Ellipse, semiMajor = 8, semiMinor = 4:");
-        Ellipse e2 = new Ellipse(8, 4, false);
-        e2.display();
+    @Override
+    public String toString() {
+        return "Ellipse[semiMajorAxis=" + semiMajorAxis + ", semiMinorAxis=" + semiMinorAxis + ", " + super.toString() + "]";
     }
 }

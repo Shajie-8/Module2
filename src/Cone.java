@@ -18,6 +18,14 @@ public class Cone extends Shape3D {
         this.height = height;
     }
 
+    public double getRadius() {
+        return radius;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
     // UNDERSTAND: Finds the slant height using Pythagorean Theorem
     double getSlantHeight() {
         return Math.sqrt(radius * radius + height * height);

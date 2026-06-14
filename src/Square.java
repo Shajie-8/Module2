@@ -15,7 +15,7 @@ public class Square extends Rectangle {
 
     // Getter for side
     // UNDERSTAND: Convenience getter specifically exposing the uniform side length.
-    // DECISION: Returns superclass width safely as width and height are guaranteed equal.
+    // DECISION: Returns superclass width safely as width and height are guaGeometryCalculatorranteed equal.
     public double getSide() { return getWidth(); }
 
     // AI-CHECK: Since Square is initialized symmetrically and no setters are exposed, Rectangle's

@@ -182,7 +182,7 @@ class ShapesCalculator {
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Ellipse - constructor delegates to setSemiMajorAxis(), setSemiMinorAxis()
-        Ellipse ellipse = new Ellipse(semiMajor, semiMinor, filled);
+        Ellipse ellipse = new Ellipse(semiMajor, semiMinor, color, filled);
 
         // UNDERSTAND: calculateArea() returns PI * a * b
         // UNDERSTAND: calculatePerimeter() uses Ramanujan's approximation formula
@@ -211,22 +211,25 @@ class ShapesCalculator {
         IO.println("            TRIANGLE                 ");
         printSeparator();
 
-    // UNDERSTAND: base is the horizontal leg of the right triangle
-    // UNDERSTAND: height is the vertical leg of the right triangle
-    // TRACE: Both passed to Triangle(double base, double height, boolean filled) constructor
+        // UNDERSTAND: base is the horizontal leg of the right triangle
+        // UNDERSTAND: height is the vertical leg of the right triangle
+        // TRACE: Both passed to Triangle(double base, double height, boolean filled) constructor
         IO.print("Enter base: ");
-    double base = Double.parseDouble(IO.readln().trim());
+        double base = Double.parseDouble(IO.readln().trim());
         IO.print("Enter height: ");
-    double height = Double.parseDouble(IO.readln().trim());
+        double height = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
 
         IO.print("Filled? (true/false): ");
-    boolean filled = Boolean.parseBoolean(IO.readln().trim());
+        boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Triangle - constructor delegates to setBase(), setHeight(), setFilled()
-        Triangle triangle = new Triangle(base, height, filled);
+        Triangle triangle = new Triangle(base, height, color, filled);
 
         // UNDERSTAND: getHypotenuse() computes sqrt(base^2 + height^2) internally
-        // UNDERSTAND: calculateArea() returns 0.5 * base * height
+        // UNDERSTAND: calculateArea() returns 0.5 * base *     height
         // UNDERSTAND: calculatePerimeter() returns base + height + hypotenuse
         // DECISION: Displayed hypotenuse separately since it is a unique Triangle feature
         // DECISION: Used String.format("%.2f") for all doubles for consistent formatting
@@ -235,6 +238,7 @@ class ShapesCalculator {
         IO.println("  Base        : " + triangle.getBase() + " units");
         IO.println("  Height      : " + triangle.getHeight() + " units");
         IO.println("  Hypotenuse  : " + String.format("%.2f", triangle.getHypotenuse()) + " units");
+        IO.println("  Color       : " + triangle.getColor());
         IO.println("  Area        : " + String.format("%.2f", triangle.calculateArea()) + " sq. units");
         IO.println("  Perimeter   : " + String.format("%.2f", triangle.calculatePerimeter()) + " units");
         printSeparator();

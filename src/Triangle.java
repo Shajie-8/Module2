@@ -9,7 +9,7 @@ public class Triangle extends Shape2D {
         this.height = 4.0;
     }
 
-    public Triangle(double base, double height, String color boolean filled) {
+    public Triangle(double base, double height, String color, boolean filled) {
         super(color, filled);
         setBase(base);
         setHeight(height);

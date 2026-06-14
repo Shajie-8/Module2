@@ -114,15 +114,19 @@ class GeometryCalculator {
         // TRACE: side value passed directly to Square constructor
         double side = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         // TRACE: filled=true -> display() renders solid block; false -> border only
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
-        Square square = new Square(side, filled);
+        Square square = new Square(side, color, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
         // DECISION: Used String.format("%.2f") for consistent 2 decimal place output
         printSeparator();
         IO.println("Side: " + square.getSide() + "units");
+        IO.println("Color: " + square.getColor());
         IO.println("Area: " + String.format("%.2f", square.calculateArea()) + " sq. units");
         IO.println("Area: " + String.format("%.2f", square.calculatePerimeter()) + " units");
         printSeparator();
@@ -150,17 +154,21 @@ class GeometryCalculator {
         IO.print("Enter height: ");
         double height = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Rectangle - constructor delegates to setWidth(), setHeight(), setFilled()
-        Rectangle rect = new Rectangle(width, height, filled);
+        Rectangle rect = new Rectangle(width, height, color, filled);
 
         // UNDERSTAND: getWidth() and getHeight() return validated stored values
         // DECISION: Display stored values (not raw input) to show setter validation worked
         printSeparator();
         IO.println("Width: " + rect.getWidth() + " units");
         IO.println("Height: " + rect.getHeight() + " units");
+        IO.println("Color     : " + rect.getColor());
         IO.println("Area: " + String.format("%.2f", rect.calculateArea()) + " sq. units");
         IO.println("Perimeter: " + String.format("%.2f", rect.calculatePerimeter()) + " units");
         printSeparator();
@@ -184,17 +192,21 @@ class GeometryCalculator {
         IO.print("Enter radius: ");
         double radius = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Circle - constructor delegates to setRadius() and setFilled()
-        Circle circle = new Circle(radius, filled);
+        Circle circle = new Circle(radius, color, filled);
 
         // UNDERSTAND: calculateArea() returns PI * r^2
         // UNDERSTAND: calculatePerimeter() returns 2 * PI * r (circumference)
         // DECISION: Used "Circumference" label since that is the correct term for circles
         printSeparator();
         IO.println("Radius: " + circle.getRadius() + " units");
+        IO.println("Color         : " + circle.getColor());
         IO.println("Area: " + String.format("%.2f", circle.calculateArea()) + " sq. units");
         IO.println("Circumference: " + String.format("%.2f", circle.calculatePerimeter()) + " units");
         printSeparator();
@@ -222,11 +234,14 @@ class GeometryCalculator {
         IO.print("Enter semi-minor axis (b): ");
         double semiMinor = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Ellipse - constructor delegates to setSemiMajorAxis(), setSemiMinorAxis()
-        Ellipse ellipse = new Ellipse(semiMajor, semiMinor, filled);
+        Ellipse ellipse = new Ellipse(semiMajor, semiMinor, color, filled);
 
         // UNDERSTAND: calculateArea() returns PI * a * b
         // UNDERSTAND: calculatePerimeter() uses Ramanujan's approximation formula
@@ -234,6 +249,7 @@ class GeometryCalculator {
         printSeparator();
         IO.println("Semi-Major Axis: " + ellipse.getSemiMajorAxis() + " units");
         IO.println("Semi-Minor Axis: " + ellipse.getSemiMinorAxis() + " units");
+        IO.println("Color: " + ellipse.getColor());
         IO.println("Area: " + String.format("%.2f", ellipse.calculateArea()) + " sq. units");
         IO.println("Perimeter (approx): " + String.format("%.2f", ellipse.calculatePerimeter()) + " units");
         printSeparator();
@@ -258,15 +274,18 @@ class GeometryCalculator {
     // UNDERSTAND: height is the vertical leg of the right triangle
     // TRACE: Both passed to Triangle(double base, double height, boolean filled) constructor
         IO.print("Enter base: ");
-    double base = Double.parseDouble(IO.readln().trim());
+        double base = Double.parseDouble(IO.readln().trim());
         IO.print("Enter height: ");
-    double height = Double.parseDouble(IO.readln().trim());
+        double height = Double.parseDouble(IO.readln().trim());
+
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
 
         IO.print("Filled? (true/false): ");
-    boolean filled = Boolean.parseBoolean(IO.readln().trim());
+        boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Triangle - constructor delegates to setBase(), setHeight(), setFilled()
-        Triangle triangle = new Triangle(base, height, filled);
+        Triangle triangle = new Triangle(base, height, color, filled);
 
         // UNDERSTAND: getHypotenuse() computes sqrt(base^2 + height^2) internally
         // UNDERSTAND: calculateArea() returns 0.5 * base * height
@@ -278,6 +297,7 @@ class GeometryCalculator {
         IO.println("Base: " + triangle.getBase() + " units");
         IO.println("Height: " + triangle.getHeight() + " units");
         IO.println("Hypotenuse: " + String.format("%.2f", triangle.getHypotenuse()) + " units");
+        IO.println("Color: " + triangle.getColor());
         IO.println("Area: " + String.format("%.2f", triangle.calculateArea()) + " sq. units");
         IO.println("Perimeter: " + String.format("%.2f", triangle.calculatePerimeter()) + " units");
         printSeparator();

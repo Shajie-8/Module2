@@ -1,17 +1,19 @@
-public class Cone {
+public class Cone extends Shape3D {
 
     // UNDERSTAND: Stores the radius and height
     private double radius;
     private double height;
 
     // UNDERSTAND: Default values
-    Cone() {
+    public Cone() {
+        super("red");
         radius = 1.0;
         height = 1.0;
     }
 
     // UNDERSTAND: Creates a cone with given dimensions
-    Cone(double radius, double height) {
+    public Cone(double radius, double height, String color) {
+        super(color);
         this.radius = radius;
         this.height = height;
     }

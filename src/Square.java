@@ -8,12 +8,8 @@ public class Square extends Rectangle {
     }
 
     // Constructor
-    // UNDERSTAND: Called when a new Square object is created - initializes object state
-    // Decision: Delegates to setter for validation (reuses existing validation logic)
-    // AI-CHECK: Confirmed with textbook that setter delegation is a standard pattern
-    Square(double side, boolean filled) {
-        setSide(side); // Using setter for validation
-        setFilled(filled);
+    public Square(double side, String color, boolean filled) {
+        super(side, side, color, filled);
     }
 
 

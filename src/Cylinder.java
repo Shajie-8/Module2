@@ -37,6 +37,14 @@ public class Cylinder extends Shape3D {
         this.radius = radius;
     }
 
+    public void setHeight(double height) {
+        if (height <= 0) {
+            IO.println("Error: Height must be positive.");
+            IO.println("Height remains: " + this.height);
+            return;
+        }
+        this.height = height;
+    }
 
     // UNDERSTAND: Surface Area = 2πr(r + h)
     double calculateSurfaceArea() {

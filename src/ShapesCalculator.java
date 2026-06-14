@@ -147,6 +147,7 @@ class ShapesCalculator {
         // DECISION: Used "Circumference" label since that is the correct term for circles
         printSeparator();
         IO.println("Radius: " + circle.getRadius() + " units");
+        IO.println("Color : " + circle.getColor());
         IO.println("Area: " + String.format("%.2f", circle.calculateArea()) + " sq. units");
         IO.println("Circumference: " + String.format("%.2f", circle.calculatePerimeter()) + " units");
         printSeparator();
@@ -174,6 +175,9 @@ class ShapesCalculator {
         IO.print("Enter semi-minor axis (b): ");
         double semiMinor = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
@@ -184,10 +188,11 @@ class ShapesCalculator {
         // UNDERSTAND: calculatePerimeter() uses Ramanujan's approximation formula
         // DECISION: Labeled perimeter as "approx" to clarify it is not mathematically exact
         printSeparator();
-        IO.println("  Semi-Major Axis   : " + ellipse.getSemiMajorAxis() + " units");
-        IO.println("  Semi-Minor Axis   : " + ellipse.getSemiMinorAxis() + " units");
-        IO.println("  Area              : " + String.format("%.2f", ellipse.calculateArea()) + " sq. units");
-        IO.println("  Perimeter (approx): " + String.format("%.2f", ellipse.calculatePerimeter()) + " units");
+        IO.println("Semi-Major Axis: " + ellipse.getSemiMajorAxis() + " units");
+        IO.println("Semi-Minor Axis: " + ellipse.getSemiMinorAxis() + " units");
+        IO.println("Color: " + ellipse.getColor());
+        IO.println("Area: " + String.format("%.2f", ellipse.calculateArea()) + " sq. units");
+        IO.println("Perimeter (approx): " + String.format("%.2f", ellipse.calculatePerimeter()) + " units");
         printSeparator();
 
         // TRACE: display() renders ASCII using stored semiMajorAxis, semiMinorAxis, filled

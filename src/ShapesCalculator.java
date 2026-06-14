@@ -61,6 +61,7 @@ class ShapesCalculator {
         // TRACE: filled=true -> display() renders solid block; false -> border only
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
+        Square square = new Square(side, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
         // DECISION: Used String.format("%.2f") for consistent 2 decimal place output

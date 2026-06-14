@@ -18,6 +18,14 @@ public class Cylinder extends Shape3D {
         this.height = height;
     }
 
+    public double getRadius() {
+        return radius;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
     // UNDERSTAND: Surface Area = 2πr(r + h)
     double calculateSurfaceArea() {
         return 2 * Math.PI * radius * (radius + height);

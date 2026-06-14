@@ -4,17 +4,17 @@ public class Rectangle extends Shape2D {
     private double width;
 
     // Default Constructors
-    Rectangle() {
+    public Rectangle() {
+        super("red", false);
         this.height = 1.0;
         this.width = 1.0;
-        this.filled = false;
     }
     // UNDERSTAND: Called when a new Rectangle object is created - initializes object state
     // DECISION: Delegates to setter for validation (reuses existing validation logic)
-    Rectangle(double width, double height, boolean filled) {
+    public Rectangle(double width, double height, String color, boolean filled) {
+        super(color, filled);
         setWidth(width);
         setHeight(height);
-        setFilled(filled);
     }
     // UNDERSTAND: Provides controlled read access to private field
     // DECISION: No validation needed in getter (only returning value, not modifying)

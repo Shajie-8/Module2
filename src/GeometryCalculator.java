@@ -319,9 +319,14 @@ class GeometryCalculator {
         IO.print("Enter side length: ");
         double side = Double.parseDouble(IO.readln().trim());
 
-        Cube cube = new Cube(side);
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
+        Cube cube = new Cube(side, color);
         printSeparator();
         IO.println("RESULTS");
+        IO.println("Side Length: " + cube.getSide() + " units");
+        IO.println("Color: " + cube.getColor());
         IO.println("Surface Area: " + String.format("%.2f", cube.calculateSurfaceArea()));
         IO.println("Volume: " + String.format("%.2f", cube.calculateVolume()));
         printSeparator();
@@ -341,9 +346,16 @@ class GeometryCalculator {
         IO.print("Enter height: ");
         double height = Double.parseDouble(IO.readln().trim());
 
-        Cuboid cuboid = new Cuboid(length, width, height);
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
+        Cuboid cuboid = new Cuboid(length, width, height, color);
         printSeparator();
         IO.println("RESULTS:");
+        IO.println("Length: " + cuboid.getLength() + " units");
+        IO.println("Width: " + cuboid.getWidth() + " units");
+        IO.println("Height: " + cuboid.getHeight() + " units");
+        IO.println("Color: " + cuboid.getColor());
         IO.println("Surface Area: " + String.format("%.2f", cuboid.calculateSurfaceArea()));
         IO.println("Volume: " + String.format("%.2f", cuboid.calculateVolume()));
         printSeparator();
@@ -359,9 +371,14 @@ class GeometryCalculator {
         IO.print("Enter radius: ");
         double radius = Double.parseDouble(IO.readln().trim());
 
-        Sphere sphere = new Sphere(radius);
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
+        Sphere sphere = new Sphere(radius, color);
         printSeparator();
         IO.println("RESULTS:");
+        IO.println("Radius       : " + sphere.getRadius() + " units");
+        IO.println("Color        : " + sphere.getColor());
         IO.println("Surface Area: " + String.format("%.2f", sphere.calculateSurfaceArea()));
         IO.println("Volume: " + String.format("%.2f", sphere.calculateVolume()));
         printSeparator();
@@ -379,10 +396,16 @@ class GeometryCalculator {
         IO.print("Enter height: ");
         double height = Double.parseDouble(IO.readln().trim());
 
-        Cone cone = new Cone(baseRadius, height);
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
+        Cone cone = new Cone(baseRadius, height, color);
         printSeparator();
         IO.println("RESULTS:");
+        IO.println("Base Radius: " + cone.getRadius() + " units");
+        IO.println("Height: " + cone.getHeight() + " units");
         IO.println("Slant Height: " + String.format("%.2f", cone.getSlantHeight()));
+        IO.println("Color        : " + cone.getColor());
         IO.println("Surface Area: " + String.format("%.2f", cone.calculateSurfaceArea()));
         IO.println("Volume: " + String.format("%.2f", cone.calculateVolume()));
         printSeparator();
@@ -400,9 +423,15 @@ class GeometryCalculator {
         IO.print("Enter height: ");
         double height = Double.parseDouble(IO.readln().trim());
 
-        Cylinder cylinder = new Cylinder(baseRadius, height);
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
+        Cylinder cylinder = new Cylinder(baseRadius, height, color);
         printSeparator();
         IO.println("RESULTS:");
+        IO.println("Base Radius: " + cylinder.getRadius() + " units");
+        IO.println("Height: " + cylinder.getHeight() + " units");
+        IO.println("Color: " + cylinder.getColor());
         IO.println("Surface Area: " + String.format("%.2f", cylinder.calculateSurfaceArea()));
         IO.println("Volume: " + String.format("%.2f", cylinder.calculateVolume()));
         printSeparator();

@@ -1,26 +1,23 @@
-public class Triangle {
+public class Triangle extends Shape2D {
 
     private double base;
     private double height;
-    private boolean filled;
 
     // Default Constructors
-    Triangle() {
+    public Triangle() {
         this.base = 3.0;
         this.height = 4.0;
-        this.filled = false;
     }
 
-    Triangle(double base, double height, boolean filled) {
+    public Triangle(double base, double height, String color boolean filled) {
+        super(color, filled);
         setBase(base);
         setHeight(height);
-        setFilled(filled);
     }
 
     // Getters
-    double getBase() { return base; }
-    double getHeight() { return height; }
-    boolean isFilled() { return filled; }
+    public double getBase() { return base; }
+    public double getHeight() { return height; }
 
     // Setters
     void setBase (double base) {

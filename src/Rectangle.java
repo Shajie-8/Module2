@@ -49,19 +49,20 @@ public class Rectangle extends Shape2D {
         this.height = height;
     }
 
-
+    @Override
     double calculateArea() {
         return width * height;
     }
 
     // UNDERSTAND: Returns perimeter of rectangle = 2 * (width + height)
     // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
+    @Override
     double calculatePerimeter() {
         return 2 * (width + height);
     }
 
     // TRACE: length=6, width=3, filled=false -> border-only 6x3 rectangle
-    void display() {
+    public void display() {
         int h = Math.max(2, (int) Math.round(height));
         int w = Math.max(2, (int) Math.round(width));
         for (int r = 0; r < h; r++) {
@@ -72,13 +73,9 @@ public class Rectangle extends Shape2D {
             IO.println("");
         }
     }
-    static void main() {
-        IO.println("Filled Rectangle (8 x 5):");
-        Rectangle r1 = new Rectangle(8, 5, true);
-        r1.display();
 
-        IO.println("\nHollow Rectangle (8 x 5):");
-        Rectangle r2 = new Rectangle(8, 5, false);
-        r2.display();
+    @Override
+    public String toString() {
+        return "Rectangle[width=" + width + ", height=" + height + ", " + super.toString() + "]";
     }
 }

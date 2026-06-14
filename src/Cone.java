@@ -18,12 +18,23 @@ public class Cone extends Shape3D {
         this.height = height;
     }
 
+    // Getters
     public double getRadius() {
         return radius;
     }
 
     public double getHeight() {
         return height;
+    }
+
+    // Setters
+    public void setRadius(double radius) {
+        if (radius <= 0) {
+            IO.println("Error: Radius must be positive.");
+            IO.println("Radius remains: " + this.radius);
+            return;
+        }
+        this.radius = radius;
     }
 
     // UNDERSTAND: Finds the slant height using Pythagorean Theorem

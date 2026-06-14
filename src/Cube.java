@@ -1,21 +1,20 @@
-public class Cube {
-
-    // UNDERSTAND: Stores the side length of the cube
-    private double side;
+// UNDERSTAND: Models a concrete Cube extending Cuboid features.
+// AI-CHECK: Analogous to the Square extending Rectangle fix, Cube uses symmetric constructor forwarding to propagate identical length, width, and height to the Cuboid superclass, preventing structural violations.
+public class Cube extends Cuboid {
 
     // UNDERSTAND: Default constructor
-    Cube() {
-        side = 1.0;
+    public Cube() {
+        super(1.0, 1.0, 1.0, "red");
     }
 
     // UNDERSTAND: Creates a cube with a given side length
-    Cube(double side) {
-        this.side = side;
+    public Cube(double side, String color) {
+        super(side, side, side, color);
     }
 
     // UNDERSTAND: Returns the side length
-    double getSide() {
-        return side;
+    public double getSide() {
+        return getLength();
     }
 
     // UNDERSTAND: Updates the side length

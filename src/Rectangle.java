@@ -50,14 +50,14 @@ public class Rectangle extends Shape2D {
     }
 
     @Override
-    double calculateArea() {
+    public double calculateArea() {
         return width * height;
     }
 
     // UNDERSTAND: Returns perimeter of rectangle = 2 * (width + height)
     // DECISION: Separated from calculateArea() to follow Single Responsibility Principle
     @Override
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         return 2 * (width + height);
     }
 

@@ -1,5 +1,5 @@
 import java.util.PrimitiveIterator;
-
+// UNDERSTAND: Entry point and controller for the geometric application terminal.
 class ShapesCalculator {
 
     // UNDERSTAND: Reusable separator line for consistent formatting
@@ -55,10 +55,12 @@ class ShapesCalculator {
         // TRACE: side value passed directly to Square constructor
         double side = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         // TRACE: filled=true -> display() renders solid block; false -> border only
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
-        Square square = new Square(side, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
         // DECISION: Used String.format("%.2f") for consistent 2 decimal place output

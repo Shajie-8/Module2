@@ -42,5 +42,8 @@ public class Sphere extends Shape3D {
         return (4.0 / 3.0) * Math.PI * radius * radius * radius;
     }
 
-
+    @Override
+    public String toString() {
+        return "Sphere[radius=" + radius + ", " + super.toString() + "]";
+    }
 }

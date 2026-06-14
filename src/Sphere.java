@@ -1,25 +1,27 @@
-public class Sphere {
+public class Sphere extends Shape3D {
 
     // UNDERSTAND: Stores the radius of the sphere
     private double radius;
 
     // UNDERSTAND: Default constructor
-    Sphere() {
+    public Sphere() {
+        super("red");
         radius = 1.0;
     }
 
     // UNDERSTAND: Creates a sphere with a given radius
-    Sphere(double radius) {
+    public Sphere(double radius, String color) {
+        super(color);
         this.radius = radius;
     }
 
     // UNDERSTAND: Returns the radius
-    double getRadius() {
+    public double getRadius() {
         return radius;
     }
 
     // UNDERSTAND: Updates the radius
-    void setRadius(double radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 

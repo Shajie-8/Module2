@@ -17,18 +17,8 @@ public class Cube extends Cuboid {
         return getLength();
     }
 
-    // UNDERSTAND: Updates the side length
-    void setSide(double side) {
-        this.side = side;
-    }
-
-    // UNDERSTAND: Surface Area = 6 × side²
-    double calculateSurfaceArea() {
-        return 6 * side * side;
-    }
-
-    // UNDERSTAND: Volume = side³
-    double calculateVolume() {
-        return side * side * side;
+    @Override
+    public String toString() {
+        return "Cube[side=" + getSide() + ", " + super.toString() + "]";
     }
 }

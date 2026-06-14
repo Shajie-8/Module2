@@ -61,7 +61,7 @@ class ShapesCalculator {
         // TRACE: filled=true -> display() renders solid block; false -> border only
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
-        Square square = new Square(side, filled);
+        Square square = new Square(side, color, filled);
 
         // UNDERSTAND: Display computed results using getters and calculation methods
         // DECISION: Used String.format("%.2f") for consistent 2 decimal place output
@@ -94,11 +94,14 @@ class ShapesCalculator {
         IO.print("Enter height: ");
         double height = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Rectangle - constructor delegates to setWidth(), setHeight(), setFilled()
-        Rectangle rect = new Rectangle(width, height, filled);
+        Rectangle rect = new Rectangle(width, height, color, filled);
 
         // UNDERSTAND: getWidth() and getHeight() return validated stored values
         // DECISION: Display stored values (not raw input) to show setter validation worked

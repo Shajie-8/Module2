@@ -22,16 +22,25 @@ public class Sphere extends Shape3D {
 
     // UNDERSTAND: Updates the radius
     public void setRadius(double radius) {
+        if (radius <= 0) {
+            IO.println("Error: Radius must be positive.");
+            IO.println("Radius remains: " + this.radius);
+            return;
+        }
         this.radius = radius;
     }
 
     // UNDERSTAND: Surface Area = 4πr²
-    double calculateSurfaceArea() {
+    @Override
+    public double calculateSurfaceArea() {
         return 4 * Math.PI * radius * radius;
     }
 
     // UNDERSTAND: Volume = (4/3)πr³
-    double calculateVolume() {
+    @Override
+    public double calculateVolume() {
         return (4.0 / 3.0) * Math.PI * radius * radius * radius;
     }
+
+
 }

@@ -1,11 +1,7 @@
-// UNDERSTAND: Models a geometric rectangle with height, width, area, perimeter, and ASCII display
-// AI-CHECK: Verified class design follow standard JavaBeans patterns (getters/setters)
-public class Rectangle {
-    // UNDERSTAND: Private access restricts direct modification from outside the class
-    // DECISION: height and width stored as double to support fraction
+// UNDERSTAND: Models a concrete rectangle extending 2D classification.
+public class Rectangle extends Shape2D {
     private double height;
     private double width;
-    private boolean filled;
 
     // Default Constructors
     Rectangle() {

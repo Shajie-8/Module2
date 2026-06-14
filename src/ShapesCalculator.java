@@ -67,6 +67,7 @@ class ShapesCalculator {
         // DECISION: Used String.format("%.2f") for consistent 2 decimal place output
         printSeparator();
         IO.println("Side: " + square.getSide() + "units");
+        IO.println("Color : " + square.getColor()); // TRACE: Successfully extracts inherited parent state
         IO.println("Area: " + String.format("%.2f", square.calculateArea()) + " sq. units");
         IO.println("Area: " + String.format("%.2f", square.calculatePerimeter()) + " units");
         printSeparator();
@@ -108,6 +109,7 @@ class ShapesCalculator {
         printSeparator();
         IO.println("Width: " + rect.getWidth() + " units");
         IO.println("Height: " + rect.getHeight() + " units");
+        IO.println("Color : " + rect.getColor());
         IO.println("Area: " + String.format("%.2f", rect.calculateArea()) + " sq. units");
         IO.println("Perimeter: " + String.format("%.2f", rect.calculatePerimeter()) + " units");
         printSeparator();
@@ -131,11 +133,14 @@ class ShapesCalculator {
         IO.print("Enter radius: ");
         double radius = Double.parseDouble(IO.readln().trim());
 
+        IO.print("Enter color: ");
+        String color = IO.readln().trim();
+
         IO.print("Filled? (true/false): ");
         boolean filled = Boolean.parseBoolean(IO.readln().trim());
 
         // TRACE: Creates Circle - constructor delegates to setRadius() and setFilled()
-        Circle circle = new Circle(radius, filled);
+        Circle circle = new Circle(radius, color, filled);
 
         // UNDERSTAND: calculateArea() returns PI * r^2
         // UNDERSTAND: calculatePerimeter() returns 2 * PI * r (circumference)

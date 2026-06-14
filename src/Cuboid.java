@@ -63,14 +63,21 @@ public class Cuboid extends Shape3D {
     }
 
     // UNDERSTAND: Surface Area = 2(lw + lh + wh)
-    double calculateSurfaceArea() {
+    @Override
+    public double calculateSurfaceArea() {
         return 2 * (length * width +
                 length * height +
                 width * height);
     }
 
     // UNDERSTAND: Volume = l × w × h
-    double calculateVolume() {
+    @Override
+    public double calculateVolume() {
         return length * width * height;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuboid[length=" + length + ", width=" + width + ", height=" + height + ", " + super.toString() + "]";
     }
 }

@@ -39,11 +39,21 @@ public class Triangle extends Shape2D {
     }
 
     // Calculations
-    double getHypotenuse() { return Math.sqrt(base *  + height * height); }
-    double calculateArea() { return 0.5 * base * height; }
-    double calculatePerimeter() { return base + height + getHypotenuse(); }
+    public double getHypotenuse() {
+        return Math.sqrt(base * base + height * height);
+    }
 
-    // ASCII Art
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return base + height + getHypotenuse();
+    }
+
+
     // UNDERSTAND: Draws a right triangle with the right angle at bottom-left.
     // TRACE: base=5, height=5 -> staircase-like triangle pointing right and down.
     void display() {
@@ -58,13 +68,9 @@ public class Triangle extends Shape2D {
             IO.println("");
         }
     }
-    static void main() {
-        IO.println("Filled Triangle (base=6, height=5):");
-        Triangle t1 = new Triangle(6, 6, true);
-        t1.display();
 
-        IO.println("\nHollow Triangle (base=6, height=5):");
-        Triangle t2 = new Triangle(6, 6, false);
-        t2.display();
+    @Override
+    public String toString() {
+        return "Triangle[base=" + base + ", height=" + height + ", " + super.toString() + "]";
     }
 }

@@ -1,15 +1,10 @@
-public class Square {
-    // Data field (attribute)
-    // Understand: Private access restricts direct modification from outside the class
-    // DECISION: side is stored as double (not int) to support fractional measurements
-    private double side;
-    private boolean filled;
-
+// UNDERSTAND: Models a concrete Square that inherits structural attributes from Rectangle.
+// AI-CHECK: Solves Liskov Substitution Principle (LSP) violations directly by refusing to override
+public class Square extends Rectangle {
     // Default Constructors
-    // UNDERSTAND: Creates a unit square as a safe default state.
-    Square() {
-        this.side = 1.0;
-        this.filled = false;
+    // UNDERSTAND: Default constructor leverages parent defaults.
+    public Square() {
+        super(1.0, 1.0, "red", false);
     }
 
     // Constructor

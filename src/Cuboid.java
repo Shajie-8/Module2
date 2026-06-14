@@ -34,6 +34,15 @@ public class Cuboid extends Shape3D {
         return height;
     }
 
+    // Setters
+    public void setLength(double length) {
+        if (length <= 0) {
+            IO.println("Error: Length must be positive.");
+            IO.println("Length remains: " + this.length);
+            return;
+        }
+        this.length = length;
+    }
 
 
     // UNDERSTAND: Surface Area = 2(lw + lh + wh)

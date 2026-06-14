@@ -20,7 +20,7 @@ public class Triangle extends Shape2D {
     public double getHeight() { return height; }
 
     // Setters
-    void setBase (double base) {
+    public void setBase (double base) {
         if (base <= 0) {
             IO.println("Error: Base must be positive.");
             IO.println("Base remains: " + this.base);
@@ -28,7 +28,8 @@ public class Triangle extends Shape2D {
         }
         this.base = base;
     }
-    void setHeight (double height) {
+
+    public void setHeight (double height) {
         if (height <= 0) {
             IO.println("Error: Height must be positive.");
             IO.println("Height remains: " + this.height);
@@ -36,7 +37,6 @@ public class Triangle extends Shape2D {
         }
         this.height = height;
     }
-    void setFilled(boolean filled) { this.filled = filled; }
 
     // Calculations
     double getHypotenuse() { return Math.sqrt(base *  + height * height); }

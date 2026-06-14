@@ -53,6 +53,14 @@ public class Cuboid extends Shape3D {
         this.width = width;
     }
 
+    public void setHeight(double height) {
+        if (height <= 0) {
+            IO.println("Error: Height must be positive.");
+            IO.println("Height remains: " + this.height);
+            return;
+        }
+        this.height = height;
+    }
 
     // UNDERSTAND: Surface Area = 2(lw + lh + wh)
     double calculateSurfaceArea() {

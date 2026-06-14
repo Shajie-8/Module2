@@ -47,17 +47,24 @@ public class Cone extends Shape3D {
     }
 
     // UNDERSTAND: Finds the slant height using Pythagorean Theorem
-    double getSlantHeight() {
+    public double getSlantHeight() {
         return Math.sqrt(radius * radius + height * height);
     }
 
     // UNDERSTAND: Surface Area = πr(r + slant height)
-    double calculateSurfaceArea() {
+    @Override
+    public double calculateSurfaceArea() {
         return Math.PI * radius * (radius + getSlantHeight());
     }
 
     // UNDERSTAND: Volume = (1/3)πr²h
-    double calculateVolume() {
+    @Override
+    public double calculateVolume() {
         return (1.0 / 3.0) * Math.PI * radius * radius * height;
+    }
+
+    @Override
+    public String toString() {
+        return "Cone[radius=" + radius + ", height=" + height + ", " + super.toString() + "]";
     }
 }

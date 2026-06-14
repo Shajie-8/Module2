@@ -47,12 +47,19 @@ public class Cylinder extends Shape3D {
     }
 
     // UNDERSTAND: Surface Area = 2πr(r + h)
-    double calculateSurfaceArea() {
+    @Override
+    public double calculateSurfaceArea() {
         return 2 * Math.PI * radius * (radius + height);
     }
 
     // UNDERSTAND: Volume = πr²h
-    double calculateVolume() {
+    @Override
+    public double calculateVolume() {
         return Math.PI * radius * radius * height;
+    }
+
+    @Override
+    public String toString() {
+        return "Cylinder[radius=" + radius + ", height=" + height + ", " + super.toString() + "]";
     }
 }
